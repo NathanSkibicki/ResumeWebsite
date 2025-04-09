@@ -1,14 +1,72 @@
+.app-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
 .smooth-scroll-container {
   scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  -ms-overflow-style: none; /* IE and Edge */
 }
 
 .smooth-scroll-container::-webkit-scrollbar {
-  display: none; /* WebKit */
+  display: none; /* Chrome, Safari, Opera */
 }
 
-.page {
+/* New Navbar Styles */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
+  background-color: rgba(128, 0, 128, 0.8); /* Purple with 80% opacity */
+  backdrop-filter: blur(8px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  z-index: 50;
+  padding: 16px 24px;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-logo {
+  font-weight: bold;
+  font-size: 1.25rem;
+  color: white;
+}
+
+.navbar-links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-item {
+  margin: 0 8px;
+}
+
+.navbar-button {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.navbar-button:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  color: white;
+}
+
+/* Adjust the page content to account for navbar */
+.page {
+  box-sizing: border-box;
 }

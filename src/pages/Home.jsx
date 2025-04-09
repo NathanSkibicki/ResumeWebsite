@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import headShot from '../assets/headshot.jpg'
 
 const Home = () => {
@@ -24,12 +24,11 @@ const Home = () => {
     return(
         <div style={{
             background: 'linear-gradient(to bottom, black, #4a0e70, #2c0452)',
-            height: '100%', // Changed to 100%
-            width: '100%', // Ensure full width
+            height: '100%', 
+            width: '100%', 
             position: 'relative',
             overflow: 'hidden'
         }}> 
-            {/* Rolling Background Titles */}
             <div style={{
                 position: 'absolute',
                 top: 0,
@@ -58,13 +57,12 @@ const Home = () => {
                     ))}
                 </div>
             </div>
-
-            {/* Content */}
+                    
             <div style={{
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'center', 
-                alignItems: 'center', 
+                alignItems: 'start', 
                 height: '100vh',
                 width: '100%', 
                 paddingLeft: '5vw',
@@ -99,18 +97,9 @@ const Home = () => {
                         textAlign: 'center',
                         marginBottom: '0.5rem'
                     }}>Nathan Skibicki</h1>
-                    <h2 style={{
-                        color: 'white',
-                        fontSize: '1.5rem',
-                        opacity: 0.8,
-                        textAlign: 'center'
-                    }}>
-                        {titles[currentTitleIndex]}
-                    </h2>
+                    
                 </div>
             </div>
-
-            {/* CSS Animation */}
             <style>{`
                 @keyframes rollText {
                     0% {

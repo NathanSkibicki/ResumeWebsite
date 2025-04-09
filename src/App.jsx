@@ -1,6 +1,8 @@
 import React, { useRef, useEffect } from 'react';
 import './App.css';
 import Home from "./pages/Home";
+import About from './pages/About';
+import Navbar from './Navbar';
 
 function App() {
   const containerRef = useRef(null);
@@ -30,68 +32,84 @@ function App() {
     };
   }, []);
 
+  // Function to handle navbar link clicks
+  const scrollToSection = (id) => {
+    const element = document.getElementById(id);
+    if (element && containerRef.current) {
+      containerRef.current.scrollTo({
+        top: element.offsetTop,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   return (
-    <div 
-      ref={containerRef} 
-      className="smooth-scroll-container"
-      style={{
-        height: '100vh',
-        overflowY: 'scroll',
-        scrollSnapType: 'y mandatory'
-      }}
-    >
+    <div className="app-container">
+      <Navbar onNavClick={scrollToSection} />
       <div 
-        className="page" 
-        style={{ 
-          height: '100vh', 
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          scrollSnapAlign: 'start'
-        }}
-      >
-        <Home />
-      </div>
-      <div 
-        className="page" 
-        style={{ 
+        ref={containerRef} 
+        className="smooth-scroll-container"
+        style={{
           height: '100vh',
-          backgroundColor: "#f7a8a8", 
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          scrollSnapAlign: 'start'
+          overflowY: 'scroll',
+          scrollSnapType: 'y mandatory'
         }}
       >
-        <h1>I am</h1>
-      </div>
-
-      <div 
-        className="page" 
-        style={{ 
-          height: '100vh',
-          backgroundColor: "#a8d5f7", 
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          scrollSnapAlign: 'start'
-        }}
-      >
-        <h1>Nathan</h1>
-      </div>
-
-      <div 
-        className="page" 
-        style={{ 
-          height: '100vh',
-          backgroundColor: "#d5f7a8", 
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          scrollSnapAlign: 'start'
-        }}
-      >
-        <h1>Hi</h1>
+        <div 
+          id="home"
+          className="page" 
+          style={{ 
+            height: '100vh', 
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            scrollSnapAlign: 'start',
+            paddingTop: '60px' // Add padding to account for navbar
+          }}
+        >
+          <Home />
+        </div>
+        <div 
+          id="about"
+          className="page" 
+          style={{ 
+            height: '100vh',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            scrollSnapAlign: 'start',
+          }}
+        >
+          <About />
+        </div>
+        <div 
+          id="portfolio"
+          className="page" 
+          style={{ 
+            height: '100vh',
+            backgroundColor: "#a8d5f7", 
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            scrollSnapAlign: 'start'
+          }}
+        >
+          <h1>Nathan</h1>
+        </div>
+        <div 
+          id="contact"
+          className="page" 
+          style={{ 
+            height: '100vh',
+            backgroundColor: "#d5f7a8", 
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            scrollSnapAlign: 'start'
+          }}
+        >
+          <h1>Hi</h1>
+        </div>
       </div>
     </div>
   );
