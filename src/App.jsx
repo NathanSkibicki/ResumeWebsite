@@ -87,7 +87,7 @@ function App() {
           className="page" 
           style={{ 
             height: '100vh',
-            backgroundColor: "#a8d5f7", 
+            background: '#2c0452',
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
