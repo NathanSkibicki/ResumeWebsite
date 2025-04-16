@@ -97,6 +97,12 @@ const Home = () => {
                         textAlign: 'center',
                         marginBottom: '0.5rem'
                     }}>Nathan Skibicki</h1>
+                    <h4 style={{
+                        color: 'white',
+                        textShadow: '2px 2px 4px rgba(0,0,0,0.3)',
+                        textAlign: 'center',
+                        marginBottom: '0.5rem'
+                    }}>software engineer and cs student</h4>
                     
                 </div>
             </div>

@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import aura from '../assets/Aura.jpg'
+import mitsubishi from '../assets/mitsu.png'
+import ultimate from '../assets/ultimatecoders.jpg'
 
 const About = () => {
   const [windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 0);
@@ -28,6 +30,8 @@ const About = () => {
   // Image size calculations
   const imageSize = isMobile ? '200px' : isTablet ? '250px' : '300px';
   const imageBorderWidth = isMobile ? '3px' : '5px';
+  const imageBorderWidthIcons = isMobile ? '1px' : '2px'
+  const imageSizeIcon = isMobile ? '40px' : isTablet ? '50px': '60px'
 
   return (
     <div style={{
@@ -76,8 +80,10 @@ const About = () => {
           }}>
             Software engineer, designer, and studying Computer Science at Western University. Currently at Mitsubishi.
           </p>
-          <p style={{color:'white', fontSize: paragraphFontSize}}>
+          {/*resume Link*/}
+          <p style={{color:'white', fontSize: paragraphFontSize, paddingBottom:padding}}>
             Engineering the future
+            
             <span>
               <a 
                 href="/Nathan Skibicki Resume.pdf" 
@@ -119,7 +125,140 @@ const About = () => {
                 </svg>
               </a>
             </span>
+            {/*Icons and experience*/}
+            <div 
+              style={{display: 'flex',
+              flexDirection: 'row', 
+              alignItems: 'center',
+              marginTop: '10px',
+              marginBottom: '10px'}}>
+              <a href="https://mhirj.com/" target="_blank" rel="noopener noreferrer">
+                <img 
+                  src={mitsubishi} 
+                  style={{
+                    height: 'auto',
+                    width: isMobile ? '30px' : isTablet ? '40px' : '50px',
+                    borderRadius: '8px',
+                    objectFit: 'contain',
+                    border: `${imageBorderWidthIcons} solid white`,
+                    boxShadow: '0 2px 4px rgba(0, 0, 0, 0.2)',
+                    marginRight: '10px',
+                    verticalAlign: 'middle'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.transform = 'scale(1.1)';
+                    e.currentTarget.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.3)';
+                    e.currentTarget.style.borderColor = '#f0f0f0';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.transform = 'scale(1)';
+                    e.currentTarget.style.boxShadow = '0 2px 4px rgba(0, 0, 0, 0.2)';
+                    e.currentTarget.style.borderColor = 'white';
+                  }}
+                  alt="Mitsubishi Heavy Industries logo"
+                />
+              </a>
+              <div style={{paddingTop: '-5px'}}>
+                <p style={{fontWeight:'700'}}>Mitsubishi Heavy Industries</p>
+                <p style={{fontSize: 'medium'}}>Full Stack Developer and Data Analyst</p>
+              </div>
+            </div>
+            <div 
+              style={{display: 'flex',
+                flexDirection: 'row', 
+                alignItems: 'center',
+                marginTop: '10px',
+                marginBottom: '20px'}}
+                >
+              <a href="https://www.ultimatecoders.ca/" target="_blank" rel="noopener noreferrer">
+                <img 
+                  src={ultimate} 
+                  style={{
+                    height: 'auto',
+                    width: isMobile ? '30px' : isTablet ? '40px' : '50px',
+                    borderRadius: '8px',
+                    objectFit: 'contain',
+                    border: `${imageBorderWidthIcons} solid white`,
+                    boxShadow: '0 2px 4px rgba(0, 0, 0, 0.2)',
+                    marginRight: '10px',
+                    verticalAlign: 'middle'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.transform = 'scale(1.1)';
+                    e.currentTarget.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.3)';
+                    e.currentTarget.style.borderColor = '#f0f0f0';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.transform = 'scale(1)';
+                    e.currentTarget.style.boxShadow = '0 2px 4px rgba(0, 0, 0, 0.2)';
+                    e.currentTarget.style.borderColor = 'white';
+                  }}
+                  alt="Ultimate Coders logo"
+                />
+              </a>
+              <div>
+                <p style={{fontWeight:'700'}}>Ultimate Coders</p>  
+                <p style={{fontSize: 'medium'}}>Programming Instructor</p>
+              </div>
+            </div>
+            <div style={{
+  display: 'flex', 
+  justifyContent: 'center',
+  padding: '10px', 
+  color: 'white',
+  marginTop: 'auto', // This pushes it to the bottom of the flex container
+  borderTop: '1px solid rgba(255, 255, 255, 0.2)', // Subtle separator
+  paddingTop: '15px',
+  width: '100%' // Ensure it spans the full width
+}}>
+  <span style={{
+    display: 'flex',
+    gap: '30px', // Creates proper spacing between links
+  }}>
+    <a 
+      href="https://github.com/NathanSkibicki" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      style={{
+        color: 'white',
+        textDecoration: 'none', 
+        transition: 'color 0.3s ease',
+        fontSize: paragraphFontSize,
+      }}
+      onMouseEnter={(e) => {
+        e.currentTarget.style.color = '#c9a0ff'; 
+      }}
+      onMouseLeave={(e) => {
+        e.currentTarget.style.color = 'white';
+      }}
+    >
+      GitHub
+    </a>
+    <a 
+      href="https://www.linkedin.com/in/nathan-skibicki-71b03b223/" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      style={{
+        color: 'white',
+        textDecoration: 'none', // Removes underline
+        transition: 'color 0.3s ease',
+        fontSize: paragraphFontSize,
+      }}
+      onMouseEnter={(e) => {
+        e.currentTarget.style.color = '#c9a0ff'; // Light purple on hover
+      }}
+      onMouseLeave={(e) => {
+        e.currentTarget.style.color = 'white';
+      }}
+    >
+      LinkedIn
+    </a>
+  </span>
+</div>
+          
           </p>
+          {/*links at bottom of about*/}
+          
         </div>
         
         <div style={{
