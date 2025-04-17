@@ -32,7 +32,6 @@ function App() {
     };
   }, []);
 
-  // Function to handle navbar link clicks
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
     if (element && containerRef.current) {
@@ -64,7 +63,7 @@ function App() {
             justifyContent: 'center',
             alignItems: 'center',
             scrollSnapAlign: 'start',
-            paddingTop: '60px' // Add padding to account for navbar
+            paddingTop: '60px' 
           }}
         >
           <Home />
@@ -80,7 +79,7 @@ function App() {
             scrollSnapAlign: 'start',
           }}
         >
-          <About />
+          <About onNavClick={scrollToSection} />
         </div>
         <div 
           id="portfolio"

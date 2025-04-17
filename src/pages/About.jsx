@@ -3,7 +3,7 @@ import aura from '../assets/Aura.jpg'
 import mitsubishi from '../assets/mitsu.png'
 import ultimate from '../assets/ultimatecoders.jpg'
 
-const About = () => {
+const About = ({ onNavClick }) => {
   const [windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 0);
   
   useEffect(() => {
@@ -16,6 +16,11 @@ const About = () => {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
+  
+  const handleClick = (e, id) => {
+    e.preventDefault();
+    onNavClick(id);
+  };
 
   // Responsive values based on screen size
   const isMobile = windowWidth < 768;
@@ -201,64 +206,85 @@ const About = () => {
                 <p style={{fontSize: 'medium'}}>Programming Instructor</p>
               </div>
             </div>
+
+            {/*links at bottom of about*/}
             <div style={{
-  display: 'flex', 
-  justifyContent: 'center',
-  padding: '10px', 
-  color: 'white',
-  marginTop: 'auto', // This pushes it to the bottom of the flex container
-  borderTop: '1px solid rgba(255, 255, 255, 0.2)', // Subtle separator
-  paddingTop: '15px',
-  width: '100%' // Ensure it spans the full width
-}}>
-  <span style={{
-    display: 'flex',
-    gap: '30px', // Creates proper spacing between links
-  }}>
-    <a 
-      href="https://github.com/NathanSkibicki" 
-      target="_blank" 
-      rel="noopener noreferrer"
-      style={{
-        color: 'white',
-        textDecoration: 'none', 
-        transition: 'color 0.3s ease',
-        fontSize: paragraphFontSize,
-      }}
-      onMouseEnter={(e) => {
-        e.currentTarget.style.color = '#c9a0ff'; 
-      }}
-      onMouseLeave={(e) => {
-        e.currentTarget.style.color = 'white';
-      }}
-    >
-      GitHub
-    </a>
-    <a 
-      href="https://www.linkedin.com/in/nathan-skibicki-71b03b223/" 
-      target="_blank" 
-      rel="noopener noreferrer"
-      style={{
-        color: 'white',
-        textDecoration: 'none', // Removes underline
-        transition: 'color 0.3s ease',
-        fontSize: paragraphFontSize,
-      }}
-      onMouseEnter={(e) => {
-        e.currentTarget.style.color = '#c9a0ff'; // Light purple on hover
-      }}
-      onMouseLeave={(e) => {
-        e.currentTarget.style.color = 'white';
-      }}
-    >
-      LinkedIn
-    </a>
-  </span>
-</div>
-          
+              display: 'flex', 
+              justifyContent: 'center',
+              padding: '10px', 
+              color: 'white',
+              marginTop: 'auto',
+              borderTop: '1px solid rgba(255, 255, 255, 0.2)',
+              paddingTop: '15px',
+              width: '100%',
+              
+            }}>
+              <span style={{
+                display: 'flex',
+                gap: '30px', 
+              }}>
+                <a 
+                  href="https://github.com/NathanSkibicki" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  style={{
+                    color: 'white',
+                    textDecoration: 'none', 
+                    transition: 'color 0.3s ease',
+                    fontSize: paragraphFontSize,
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.color = '#c9a0ff'; 
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.color = 'white';
+                  }}
+                >
+                  GitHub
+                </a>
+                <a 
+                  href="https://www.linkedin.com/in/nathan-skibicki-71b03b223/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  style={{
+                    color: 'white',
+                    textDecoration: 'none',
+                    transition: 'color 0.3s ease',
+                    fontSize: paragraphFontSize,
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.color = '#c9a0ff';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.color = 'white';
+                  }}
+                >
+                  LinkedIn
+                </a>
+                <a 
+                  href="#" 
+                  onClick={(e) => {
+                    e.preventDefault();
+                    onNavClick('portfolio'); 
+                  }} 
+                  style={{
+                    color: 'white',
+                    textDecoration: 'none',
+                    transition: 'color 0.3s ease',
+                    fontSize: paragraphFontSize,
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.color = '#c9a0ff';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.color = 'white';
+                  }}
+                >
+                  Projects
+                </a>
+              </span>
+            </div>
           </p>
-          {/*links at bottom of about*/}
-          
         </div>
         
         <div style={{

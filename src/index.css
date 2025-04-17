@@ -6,21 +6,20 @@
 }
 
 .smooth-scroll-container {
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; 
+  -ms-overflow-style: none; 
 }
 
 .smooth-scroll-container::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Opera */
+  display: none; 
 }
 
-/* New Navbar Styles */
 .navbar {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  background-color: rgba(128, 0, 128, 0.8); /* Purple with 80% opacity */
+  background-color: rgba(128, 0, 128, 0.8); 
   backdrop-filter: blur(8px);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
   z-index: 50;
@@ -66,7 +65,6 @@
   color: white;
 }
 
-/* Adjust the page content to account for navbar */
 .page {
   box-sizing: border-box;
 }
