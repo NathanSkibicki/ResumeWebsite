@@ -3,6 +3,7 @@ import './App.css';
 import Home from "./pages/Home";
 import About from './pages/About';
 import Navbar from './Navbar';
+import Project from './pages/Projects';
 
 function App() {
   const containerRef = useRef(null);
@@ -93,7 +94,7 @@ function App() {
             scrollSnapAlign: 'start'
           }}
         >
-          <h1>Nathan</h1>
+          <Project/>
         </div>
         <div 
           id="contact"
