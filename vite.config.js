@@ -12,7 +12,8 @@ export default defineConfig({
       output: {
         assetFileNames: 'assets/[name]-[hash][extname]',
         chunkFileNames: 'assets/[name]-[hash].js',
-        entryFileNames: 'assets/[name]-[hash].js'
+        entryFileNames: 'assets/[name]-[hash].js',
+        format: 'es'
       }
     }
   },
@@ -23,6 +24,7 @@ export default defineConfig({
     extensions: ['.js', '.jsx', '.json']
   },
   esbuild: {
-    loader: 'jsx'
+    loader: 'jsx',
+    jsx: 'automatic'
   }
 })
