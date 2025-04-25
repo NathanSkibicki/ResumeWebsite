@@ -8,12 +8,17 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
+    minify: 'terser',
     rollupOptions: {
       output: {
         assetFileNames: 'assets/[name]-[hash][extname]',
         chunkFileNames: 'assets/[name]-[hash].js',
         entryFileNames: 'assets/[name]-[hash].js',
-        format: 'es'
+        format: 'es',
+        manualChunks: {
+          'react-vendor': ['react', 'react-dom'],
+          'mui-vendor': ['@mui/material', '@mui/icons-material', '@emotion/react', '@emotion/styled']
+        }
       }
     }
   },
@@ -25,6 +30,7 @@ export default defineConfig({
   },
   esbuild: {
     loader: 'jsx',
-    jsx: 'automatic'
+    jsx: 'automatic',
+    target: 'esnext'
   }
 })
