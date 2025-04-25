@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://nathanskibicki.github.io/resume-website",
+  "homepage": "https://nathanskibicki.github.io/ResumeWebsite",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -17,8 +17,7 @@
     "@react-spring/parallax": "^9.7.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-scroll-parallax": "^3.4.3",
-    "gh-pages": "^6.1.1"
+    "react-scroll-parallax": "^3.4.3"
   },
   "devDependencies": {
     "@types/react": "^18.2.55",
@@ -27,6 +26,7 @@
     "eslint": "^8.56.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.5",
+    "gh-pages": "^6.3.0",
     "vite": "^5.1.3"
   }
 }
