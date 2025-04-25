@@ -32,6 +32,7 @@ const About = ({ onNavClick }) => {
   const headingFontSize = isMobile ? '24px' : isTablet ? '28px' : '32px';
   const paragraphFontSize = isMobile ? '16px' : '18px';
   const padding = isMobile ? '15px' : isTablet ? '20px' : '30px';
+  const bottomLinkPadding = isMobile ? '50px' : isTablet ? '70px': '120px' 
   
   // Image size calculations
   const imageSize = isMobile ? '200px' : isTablet ? '250px' : '300px';
@@ -259,7 +260,7 @@ const About = ({ onNavClick }) => {
           justifyContent: 'center',
           padding: '10px', 
           color: 'white',
-          marginTop: '50px',
+          marginTop: bottomLinkPadding,
           borderTop: '1px solid rgba(255, 255, 255, 0.2)',
           paddingTop: '20px',
           width: '100%',
