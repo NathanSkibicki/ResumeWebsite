@@ -106,6 +106,8 @@ const About = ({ onNavClick }) => {
               <span>
                 <a 
                   href="/Nathan Skibicki Resume.pdf"
+                  alt = "Resume"
+                  locale={false}
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{
