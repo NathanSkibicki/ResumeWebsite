@@ -105,10 +105,8 @@ const About = ({ onNavClick }) => {
               Engineering the future
               <span>
                 <a 
-                  href={process.env.NODE_ENV === 'production' 
-                    ? '/resume-website/Nathan Skibicki Resume.pdf'
-                    : '/Nathan Skibicki Resume.pdf'} 
-                  target="_blank" 
+                  href="/Nathan Skibicki Resume.pdf"
+                  target="_blank"
                   rel="noopener noreferrer"
                   style={{
                     color: '#ffffff', 

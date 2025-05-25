@@ -4,7 +4,8 @@ import Home from "./pages/Home";
 import About from './pages/About';
 import Navbar from './Navbar';
 import Project from './pages/Projects';
-import Contact from './pages/Contact'
+import Contact from './pages/Contact';
+import Resume from './pages/Resume';
 
 function App() {
   useEffect(() => {
@@ -82,6 +83,20 @@ function App() {
           }}
         >
           <Contact />
+        </div>
+        <div 
+          id="resume"
+          className="page" 
+          style={{ 
+            minHeight: '100vh',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            position: 'relative',
+            flexShrink: 0
+          }}
+        >
+          <Resume />
         </div>
       </div>
     </div>
